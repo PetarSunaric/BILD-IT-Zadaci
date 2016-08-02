@@ -2,22 +2,33 @@ package zadaci_02_08_2016;
 /*Napišite program koji æe brojati broj karaktera, rijeèi i linija teksta u nekom fileu.
  *  Rijeèi trebaju biti odvojene jednim spaceom. Ime file proslijediti kao argument u vaš program.*/
 
-//import java.io.BufferedWriter;
 import java.io.File;
-import java.io.IOException;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class BrojLinijRijeciIKarakteraUFileu {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws FileNotFoundException {
 
 		Scanner input2 = new Scanner(System.in);
 		// trazimo od korisnika da unese fajl
-		System.out.println("Unesite ime fajla sa putanjom: ");
-		String imeFajla = input2.next();
+		String imeFajla = null;
+		boolean greska = true;
+		Scanner input = new Scanner(System.in);
+		// petlja se vrti sve dok postoji greska
+		while (greska) {
+			try {
+				System.out.println("Unesite ime fajla sa putanjom: ");
+				imeFajla = input2.nextLine();
+				input = new Scanner(new File(imeFajla));
+				// kada je unijeta tacna putanja petlja se prekida
+				greska = false;
+			} catch (FileNotFoundException ex) {
+				System.out.println("Pogresna putanja!");
+
+			}
+		}
 		// uzimamo fajl
-		File file = new File(imeFajla);
-		Scanner input = new Scanner(file);
 		int brojKaraktera = 0, brojRijeci = 0, brojLinija = 0;
 		// pravimo niz gdje cemo smjestiti rijeci
 		String[] niz = {};
