@@ -8,17 +8,8 @@ import java.util.Scanner;
 
 public class PitanjeOduzimanja {
 
-	public static void main(String[] args) {
-
+	public static void pitanja(int brojPitanja) {
 		Scanner input = new Scanner(System.in);
-		// unosimo broj pitanja
-		System.out.print("Unesite broj pitanja: ");
-		int brojPitanja = 0;
-		try {
-			brojPitanja = input.nextInt();
-		} catch (java.util.InputMismatchException ex) {
-			System.out.println("Pogresan unos!");
-		}
 		int tacniOdgovori = 0, netacniOdgovori = 0;
 		// petlja ce se obrnuti onoliko puta koliko imamo pitanja
 		for (int i = 0; i < brojPitanja; i++) {
@@ -57,6 +48,28 @@ public class PitanjeOduzimanja {
 		// na kraju ispisujemo broj tacnih i broj netacnih odgovora
 		System.out.println("##################\nBroj tacnih odgovora je: " + tacniOdgovori
 				+ "\nBroj netacnih odgovora je: " + netacniOdgovori);
+		input.close();
+	}
+
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+		// unosimo broj pitanja
+		int brojPitanja = 0;
+		boolean pogresno = true;
+		// sve dok ne unesemo broj pitamo ponovo da se unese broj pitanja
+		while (pogresno) {
+			try {
+				System.out.print("Unesite broj pitanja: ");
+				brojPitanja = input.nextInt();
+				// kada je unijet broj petlja se zavrsava
+				pogresno = false;
+			} catch (java.util.InputMismatchException ex) {
+				System.out.println("Pogresan unos!");
+				input.nextLine();
+			}
+		}
+		pitanja(brojPitanja);
 
 		input.close();
 
