@@ -36,7 +36,12 @@ public class KolikoSeNajveciBrojPutaPonovio {
 		int i = 1;
 		do {
 			System.out.print("Unesite broj: ");
-			i = input.nextInt();
+			try {
+				i = input.nextInt();
+			} catch (java.util.InputMismatchException ex) {
+				System.out.println("Pogresan unos!");
+				input.nextLine();
+			}
 			list.add(i);
 		} while (i != 0);
 		// prosljedjujemo listu metodi koja ce da odredi najveci i vrati broj, a
