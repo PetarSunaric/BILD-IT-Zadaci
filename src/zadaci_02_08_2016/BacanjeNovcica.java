@@ -9,24 +9,8 @@ import java.util.Scanner;
 
 public class BacanjeNovcica {
 
-	public static void main(String[] args) {
-
-		Scanner input = new Scanner(System.in);
-		boolean pogresno = true;
-		int brojBacanja = 0;
-		// pitate korisnika koliko puta cete baciti novcic
-		while (pogresno) {
-			try {
-				System.out.println("Koliko puta cete bacati novcic?");
-				brojBacanja = input.nextInt();
-				// kada je unos broj petlja se prekida
-				pogresno = false;
-			} catch (java.util.InputMismatchException ex) {
-				System.out.println("Pogresan unos!");
-			}
-		}
+	public static void pismoGlava(int brojBacanja){
 		int pismo = 0, glava = 0;
-		//
 		for (int i = 0; i < brojBacanja; i++) {
 			// generisemo 2 random broja 0 i 1
 			int bacanje = (int) (Math.random() * 2);
@@ -43,16 +27,35 @@ public class BacanjeNovcica {
 		// Na kraju ispisujemo broj glava i pisama. Ukoliko je broj veci od 1
 		// dodajemo a na kraju rijeci put
 		System.out.print("Dobili ste " + glava + " put");
-		if (glava > 1) {
+		if (glava != 1) {
 			System.out.print("a glavu i ");
 		} else
 			System.out.print(" glavu i ");
-		System.out.print(pismo + " put ");
-		if (pismo > 1) {
+		System.out.print(pismo + " put");
+		if (pismo != 1) {
 			System.out.println("a pismo.");
 		} else {
-			System.out.println("pismo.");
+			System.out.println(" pismo.");
 		}
+	}
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+		boolean pogresno = true;
+		int brojBacanja = 0;
+		// pitate korisnika koliko puta cete baciti novcic
+		while (pogresno) {
+			try {
+				System.out.println("Koliko puta cete bacati novcic?");
+				brojBacanja = input.nextInt();
+				// kada je unos broj petlja se prekida
+				pogresno = false;
+			} catch (java.util.InputMismatchException ex) {
+				System.out.println("Pogresan unos!");
+				input.nextLine();
+			}
+		}
+		pismoGlava(brojBacanja);
 
 		input.close();
 	}
