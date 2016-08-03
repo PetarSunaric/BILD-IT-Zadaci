@@ -58,7 +58,7 @@ public class LokacijaNajvecegElementaDvaDNiza {
 				}
 			}
 		}
-		// prikaz matrice
+		// prikaz matrice.
 		for (double[] e : matrica) {
 			for (double b : e) {
 				System.out.print(b + " ");
