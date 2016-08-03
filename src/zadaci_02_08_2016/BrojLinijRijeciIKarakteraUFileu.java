@@ -1,6 +1,6 @@
 package zadaci_02_08_2016;
-/*Napiöite program koji Êe brojati broj karaktera, rijeËi i linija teksta u nekom fileu.
- *  RijeËi trebaju biti odvojene jednim spaceom. Ime file proslijediti kao argument u vaö program.*/
+/*Napi≈°ite program koji √¶e brojati broj karaktera, rije√®i i linija teksta u nekom fileu.
+ *  Rije√®i trebaju biti odvojene jednim spaceom. Ime file proslijediti kao argument u va≈° program.*/
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -20,6 +20,7 @@ public class BrojLinijRijeciIKarakteraUFileu {
 			try {
 				System.out.println("Unesite ime fajla sa putanjom: ");
 				imeFajla = input2.nextLine();
+				// uzimamo fajl
 				input = new Scanner(new File(imeFajla));
 				// kada je unijeta tacna putanja petlja se prekida
 				greska = false;
@@ -28,7 +29,6 @@ public class BrojLinijRijeciIKarakteraUFileu {
 
 			}
 		}
-		// uzimamo fajl
 		int brojKaraktera = 0, brojRijeci = 0, brojLinija = 0;
 		// pravimo niz gdje cemo smjestiti rijeci
 		String[] niz = {};
