@@ -10,9 +10,10 @@ public class BrojLinijRijeciIKarakteraUFileu {
 
 	public static void main(String[] args) throws FileNotFoundException {
 
-	// uzimamo fajl
-		Scanner input = new Scanner(new File("src/zadaci_02_08_2016/pomoc.txt"));	
-		
+
+		// uzimamo fajl
+		Scanner input = new Scanner(new File("src/zadaci_02_08_2016/pomoc.txt"));		
+
 		int brojKaraktera = 0, brojRijeci = 0, brojLinija = 0;
 		// pravimo niz gdje cemo smjestiti rijeci
 		String[] niz = {};
@@ -27,7 +28,6 @@ public class BrojLinijRijeciIKarakteraUFileu {
 			niz = str.split(" ");
 			brojRijeci += niz.length;
 		}
-		input2.close();
 		input.close();
 		// ispisujemo broj karaktera, broj rijeci i broj linija u fajlu
 		System.out.println(
