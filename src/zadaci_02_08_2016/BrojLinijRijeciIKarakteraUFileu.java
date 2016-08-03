@@ -20,7 +20,7 @@ public class BrojLinijRijeciIKarakteraUFileu {
 		while (input.hasNext()) {
 			// uzimamo liniju koda
 			String str = input.nextLine();
-			// broj karaktera je duzina stringa
+			// broj karaktera je duzina stringa.
 			brojKaraktera += str.length();
 			// broj linija se povecava sa svakim uzimanjem linije
 			brojLinija++;
