@@ -29,7 +29,7 @@ public class BrojLinijRijeciIKarakteraUFileu {
 			brojRijeci += niz.length;
 		}
 		input.close();
-		// ispisujemo broj karaktera, broj rijeci i broj linija u fajlu
+		// ispisujemo broj karaktera, broj rijeci i broj linija u fajlu.
 		System.out.println(
 				"Broj karaktera: " + brojKaraktera + ", broj rijeci: " + brojRijeci + ",broj linija: " + brojLinija);
 	}
