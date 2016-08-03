@@ -15,7 +15,7 @@ public class BrojLinijRijeciIKarakteraUFileu {
 		Scanner input = new Scanner(new File("src/zadaci_02_08_2016/pomoc.txt"));		
 
 		int brojKaraktera = 0, brojRijeci = 0, brojLinija = 0;
-		// pravimo niz gdje cemo smjestiti rijeci
+		// pravimo niz gdje cemo smjestiti rijeci.
 		String[] niz = {};
 		while (input.hasNext()) {
 			// uzimamo liniju koda
