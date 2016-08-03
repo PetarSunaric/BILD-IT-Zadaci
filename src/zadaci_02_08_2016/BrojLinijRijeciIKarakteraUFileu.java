@@ -11,13 +11,13 @@ public class BrojLinijRijeciIKarakteraUFileu {
 	public static void main(String[] args) throws FileNotFoundException {
 
 		Scanner input2 = new Scanner(System.in);
-		// trazimo od korisnika da unese fajl
 		String imeFajla = null;
 		boolean greska = true;
 		Scanner input = new Scanner(System.in);
 		// petlja se vrti sve dok postoji greska
 		while (greska) {
 			try {
+				// trazimo od korisnika da unese fajl
 				System.out.println("Unesite ime fajla sa putanjom: ");
 				imeFajla = input2.nextLine();
 				// uzimamo fajl
