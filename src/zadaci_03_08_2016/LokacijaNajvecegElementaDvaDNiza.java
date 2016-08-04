@@ -16,9 +16,9 @@ public class LokacijaNajvecegElementaDvaDNiza {
 		// pravimo niz koji ce sadrzati 2 elementa, tj nasu lokaciju najveceg
 		// elementa, i promjenljivu max koja sprema najveci element
 		int[] largest = new int[2];
-		double max = 0;
-		for (int x = 0; x < a.length; x++) {
-			for (int y = 0; y < a[x].length; y++) {
+		double max = a[0][0];
+		for (int x = 1; x < a.length; x++) {
+			for (int y = 1; y < a[x].length; y++) {
 				// kada nadjemo broj koji je veci od max, max postaje taj broj a
 				// elementi niza postaju x i y
 				if (a[x][y] > max) {
@@ -66,7 +66,7 @@ public class LokacijaNajvecegElementaDvaDNiza {
 			System.out.println();
 		}
 		// presledjuemo matricu metodi a od nje dobijamo lokaciju niza koju
-		// dodjeljujemo nasem nizu.
+		// dodjeljujemo nasem novom nizu.
 		int[] niz = locateLargest(matrica);
 		// i na kraju ispisujemo elemente naseg niza
 		System.out.println("Najveci elemenat se nalazi na lokaciji: [" + niz[0] + "][" + niz[1] + "]");

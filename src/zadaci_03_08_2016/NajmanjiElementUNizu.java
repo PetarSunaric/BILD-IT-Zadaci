@@ -33,20 +33,18 @@ public class NajmanjiElementUNizu {
 		for (int i = 0; i < niz.length; i++) {
 			greska = true;
 			// korisnik unosi 10 vrijednosti sve dok ne napravi gresku
-			// ako je napravi ponovo unosi vrijednost za taj index niza.
+			// ako je napravi ponovo unosi vrijednosti.
 			while (greska) {
 				try {
 					niz[i] = input.nextDouble();
 					greska = false;
 				} catch (InputMismatchException ex) {
 					System.out.println("Pogresan unos! Pokusajte ponovo: ");
+					//vracamo i na pocetak
 					i = 0;
 					input.nextLine();
 				}
 			}
-		}
-		for (int i = 0; i < niz.length; i++) {
-			System.out.println(niz[i] + " ");
 		}
 		// prosledjujemo niz metodi
 		System.out.println("Najmanji element u nizu je: " + min(niz));

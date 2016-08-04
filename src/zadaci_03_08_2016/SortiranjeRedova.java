@@ -2,7 +2,6 @@ package zadaci_03_08_2016;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
 /*Implementirati sljedeæu metodu da sortira redove u 2D nizu.
 
  *public static double[ ][ ] sortRows(double[ ][ ] array)
@@ -40,12 +39,21 @@ public class SortiranjeRedova {
 	public static void main(String[] args) {
 
 		Scanner input = new Scanner(System.in);
-		System.out.print("Unesite duzinu redova i kolona(jedan broj): ");
-		int n = input.nextInt();
+		int n = 0;
+		boolean greska = true;
+		while (greska) {
+			try {
+				System.out.print("Unesite duzinu redova i kolona(jedan broj): ");
+				n = input.nextInt();
+				greska = false;
+			} catch (InputMismatchException ex) {
+				System.out.println("Pogresan unos! Pokusajte ponovo.");
+				input.nextLine();
+			}
+		}
 		System.out.println("Unesite " + n + "x" + n + " matricu: ");
 		// nakon sto unesemo n on postaje duzina redova i kolona
 		double[][] matrica = new double[n][n];
-		boolean greska = true;
 		for (int x = 0; x < matrica.length; x++) {
 			for (int y = 0; y < matrica[x].length; y++) {
 				greska = true;
