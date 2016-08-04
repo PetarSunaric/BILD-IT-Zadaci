@@ -50,7 +50,7 @@ public class NajvecaVrijednostArrayListe {
 		}
 		System.out.println();
 		// Ispisujemo najvecu vrijednost ArrayList ako lista nije prazna
-		if (max(list) == 0) {
+		if (list.size()== 0) {
 			System.out.println("Lista je prazna");
 		} else {
 			System.out.println("Najveca vrijednost ArreyList je: " + max(list));
