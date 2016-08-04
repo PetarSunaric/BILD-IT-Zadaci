@@ -22,6 +22,7 @@ public class PrestupneGodine {
 
 			}
 		}
+		System.out.println("\nUkupno prestupnih godina: "+prestupneGodine);
 
 	}
 
