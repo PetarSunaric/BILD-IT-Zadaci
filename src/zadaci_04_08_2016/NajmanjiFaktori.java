@@ -9,23 +9,7 @@ import java.util.Scanner;
 
 public class NajmanjiFaktori {
 
-	public static void main(String[] args) {
-
-		Scanner input = new Scanner(System.in);
-		System.out.print("Unesite broj: ");
-		boolean greska = true;
-		int broj = 0;
-		// unos se vrti sve dok ne unesemo pravilno
-		while (greska) {
-			try {
-				broj = input.nextInt();
-				// kada se unese pravilno prekidamo unos
-				greska = false;
-			} catch (InputMismatchException ex) {
-				System.out.println("Pogresan unos! Unesite ponovo: ");
-				input.nextLine();
-			}
-		}
+	public static void najmanjiFaktori(int broj) {
 		// count koji nam broji
 		boolean prost = true;
 		System.out.println("Najmanji faktori broja " + broj + " su: ");
@@ -51,6 +35,26 @@ public class NajmanjiFaktori {
 		if (prost) {
 			System.out.println(broj + " je prost broj!");
 		}
+	}
+
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+		System.out.print("Unesite broj: ");
+		boolean greska = true;
+		int broj = 0;
+		// unos se vrti sve dok ne unesemo pravilno
+		while (greska) {
+			try {
+				broj = input.nextInt();
+				// kada se unese pravilno prekidamo unos
+				greska = false;
+			} catch (InputMismatchException ex) {
+				System.out.println("Pogresan unos! Unesite ponovo: ");
+				input.nextLine();
+			}
+		}
+		najmanjiFaktori(broj);
 		input.close();
 	}
 }

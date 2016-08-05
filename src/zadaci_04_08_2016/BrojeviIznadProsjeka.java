@@ -23,8 +23,9 @@ public class BrojeviIznadProsjeka {
 			}
 
 		}
-		System.out.println("Prosjek: " + prosjek + "\nBrojeva jednakih ili vecih od prosjeka: " + iznadProsjeka
-				+ "\nBrojeva ispod prosjeka: " + ispodProsjeka);
+		System.out.printf(
+				"Prosjek: %2.2f \nBrojeva jednakih ili vecih od prosjeka: %2d\nBrojeva ispod prosjeka: %2d" , prosjek,
+				iznadProsjeka, ispodProsjeka);
 	}
 
 	public static void main(String[] args) {
