@@ -7,6 +7,8 @@ package zadaci_04_08_2016;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import zadaci_03_08_2016.ProstiBrojeviUZadanomRangu;
+
 public class NajmanjiFaktori {
 
 	public static void najmanjiFaktori(int broj) {
@@ -24,7 +26,7 @@ public class NajmanjiFaktori {
 				broj = i;
 				// kada dodjemo do poslednjeg broja koji se ne moze dijeliti ni
 				// sa jednim, ispisujemo ga
-				if (i < 6) {
+				if (i < 4||ProstiBrojeviUZadanomRangu.isPrime(i)) {
 					System.out.println(i);
 				}
 				// ako je uslo u if petlju broj nije prost
