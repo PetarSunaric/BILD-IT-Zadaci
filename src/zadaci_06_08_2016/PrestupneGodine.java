@@ -13,6 +13,10 @@ public class PrestupneGodine {
 		int godina1 = checkInput();
 		System.out.println("Unesite gornju granicu godina: ");
 		int godina2 = checkInput();
+		prestupneGodine(godina1, godina2);
+	}
+
+	public static void prestupneGodine(int godina1, int godina2) {
 		// ukoliko je prvi unos veci do drugog zamjene se
 		if (godina1 > godina2) {
 			int temp = godina1;
