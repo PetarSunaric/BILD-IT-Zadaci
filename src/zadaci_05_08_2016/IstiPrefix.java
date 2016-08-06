@@ -4,24 +4,6 @@ import java.util.Scanner;
 
 public class IstiPrefix {
 
-	public static void istiPrefix(String str1, String str2) {
-		System.out.println("Najveci zajednicki prefix za ova dva string je: ");
-		// broji zajednicke karaktere
-		int count = 0;
-		// uzimamo duzinu manjeg stringa
-		for (int i = 0; i < str1.length(); i++) {
-			// ako su karakteri isti ispisemo ih
-			if (str1.charAt(i) == str2.charAt(i)) {
-				System.out.print(str1.charAt(i));
-				count++;
-				// ako nema istih karaktera ispisemo da nema prefixa
-			} else if (count == 0) {
-				System.out.println("Stringovi nemaju zajednicki prefix!");
-				break;
-			}
-		}
-	}
-
 	public static void main(String[] args) {
 
 		Scanner input = new Scanner(System.in);
@@ -38,6 +20,26 @@ public class IstiPrefix {
 			istiPrefix(str2, str1);
 		}
 		input.close();
+	}
+
+	public static void istiPrefix(String str1, String str2) {
+		System.out.println("Najveci zajednicki prefix za ova dva string je: ");
+		// ako nema istih karaktera ispisemo da nema prefixa
+		// uzimamo duzinu manjeg stringa
+		if (str1.charAt(0) != str2.charAt(0)) {
+			System.out.println("Stringovi nemaju zajednicki prefix!");
+			System.exit(1);
+		}
+		for (int i = 0; i < str1.length(); i++) {
+			// ako su karakteri isti ispisemo ih
+			if (str1.charAt(i) == str2.charAt(i)) {
+				System.out.print(str1.charAt(i));
+				// koristimo kako ne bi ispisivalo ako su karakteri na nekim
+				// drugim indexima isti
+			} else {
+				break;
+			}
+		}
 	}
 
 }

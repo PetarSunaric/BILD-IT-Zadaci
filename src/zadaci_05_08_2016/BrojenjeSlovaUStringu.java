@@ -4,6 +4,15 @@ import java.util.Scanner;
 
 public class BrojenjeSlovaUStringu {
 
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+		System.out.print("Unesite string: ");
+		String str = input.nextLine();
+		// uneseni string prosledjujemo metodi
+		System.out.println("Ukupno slova u stringu: " + countLetters(str));
+		input.close();
+	}
 	public static int countLetters(String str) {
 		// pravimo brojac slova
 		int count = 0;
@@ -16,14 +25,5 @@ public class BrojenjeSlovaUStringu {
 		return count;
 	}
 
-	public static void main(String[] args) {
-
-		Scanner input = new Scanner(System.in);
-		System.out.print("Unesite string: ");
-		String str = input.nextLine();
-		// uneseni string prosledjujemo metodi
-		System.out.println("Ukupno slova u stringu: " + countLetters(str));
-		input.close();
-	}
 
 }

@@ -5,6 +5,18 @@ import java.util.Scanner;
 
 public class StanjeRacuna {
 
+	static Scanner input = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		System.out.print("Unesite mjesecni iznos stednje: ");
+		double stednja = checkInputD();
+		System.out.print("Unesite broj mjeseci: ");
+		int mjeseci = checkInput();
+		// prosledjujemo unijetu stednju i broj mjeseci metodi
+		usteda(stednja, mjeseci);
+
+	}
+
 	public static void usteda(double stednja, int mjeseci) {
 		// izracunamo ustedu za prvi mjesec
 		double sum = stednja * (1 + 0.00417);
@@ -17,41 +29,45 @@ public class StanjeRacuna {
 		System.out.printf("Vasa usteda za %2d mjeseci je: %4.2f", mjeseci, sum);
 	}
 
-	public static void main(String[] args) {
+	// provjerava input za int vrijednosti
+	public static int checkInput() {
 
-		Scanner input = new Scanner(System.in);
-		boolean greska = true;
-		double stednja = 0;
-		// petlja se vrti sve dok postoji greska
-		while (greska) {
+		int num = 0;
+		boolean error = true; // check for error
+
+		do {
 			try {
-				System.out.print("Unesite mjesecni iznos stednje: ");
-				stednja = input.nextDouble();
-				// kada nema greske prekidamo petlju
-				greska = false;
-			} catch (InputMismatchException ex) {
-				System.out.println("Pogresan unos, pokusajte ponovo!");
+				num = input.nextInt();
+				if (num < 0)
+					throw new InputMismatchException("Negativan broj");
+				error = false;
+			} catch (InputMismatchException e) {
+				System.out.print("Pogresan unos, unsite ponovo:  ");
 				input.nextLine();
 			}
-		}
-		int mjeseci = 0;
-		greska = true;
-		//// petlja se vrti sve dok postoji greska
-		while (greska) {
-			try {
-				System.out.print("Unesite broj mjeseci nakon kojih bi zeljeli znati stanje racuna: ");
-				mjeseci = input.nextInt();
-				// kada nema greske prekidamo petlju
-				greska = false;
-			} catch (InputMismatchException ex) {
-				System.out.println("Pogresan unos, pokusajte ponovo!");
-				input.nextLine();
-			}
-		}
-		// prosledjujemo unijetu stednju i broj mjeseci metodi
-		usteda(stednja, mjeseci);
+		} while (error);
 
-		input.close();
+		return num;
 	}
 
+	// provjerava input za double vrijednosti
+	public static double checkInputD() {
+
+		double num = 0;
+		boolean error = true; // check for error
+
+		do {
+			try {
+				num = input.nextDouble();
+				if (num < 0)
+					throw new InputMismatchException("Negativan broj");
+				error = false;
+			} catch (InputMismatchException e) {
+				System.out.print("Pogresan unos, unsite ponovo:  ");
+				input.nextLine();
+			}
+		} while (error);
+
+		return num;
+	}
 }

@@ -5,30 +5,15 @@ import java.util.Scanner;
 
 public class ObrnutiRedoslijed {
 
+	static Scanner input = new Scanner(System.in);
+
 	public static void main(String[] args) {
 
-		Scanner input = new Scanner(System.in);
-		boolean greska = true;
 		// pravimo niz od 10 mjesta
 		int[] niz = new int[10];
-		System.out.print("Unesite 10 brojeva:");
+		System.out.print("Unesite 10 brojeva odvojenih razmakom:");
 		for (int i = 0; i < niz.length; i++) {
-			// kod ponovnog okretanja resetujemo greska
-			greska = true;
-			// petlja se vrti dok postoji greska
-			while (greska) {
-				try {
-					niz[i] = input.nextInt();
-					// ako je unos tacan prekidamo petlju
-					greska = false;
-				} catch (InputMismatchException ex) {
-					System.out.println("Pogresan unos, pokusajte ponovo!");
-					System.out.print("Unesite 10 brojeva:");
-					// resetujemo unos na pocetak
-					i = 0;
-					input.nextLine();
-				}
-			}
+			niz[i] = checkInput();
 		}
 		// krecemo od zadnjeg elementa pa do elementa na nultom indexu
 		System.out.println("Obrnuti redoslijed: ");
@@ -36,7 +21,26 @@ public class ObrnutiRedoslijed {
 			System.out.print(niz[i] + " ");
 		}
 
-		input.close();
 	}
 
+	public static int checkInput() {
+
+		int num = 0;
+		boolean error = true; // check for error
+
+		do {
+			try {
+				num = input.nextInt();
+				if (num < 0)
+					throw new InputMismatchException("Negativan broj");
+				// stops loop if input is correct
+				error = false;
+			} catch (InputMismatchException e) {
+				System.out.print("Pogresan unos, unsite ponovo:  ");
+				input.nextLine();
+			}
+		} while (error);
+
+		return num;
+	}
 }
