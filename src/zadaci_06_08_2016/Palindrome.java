@@ -19,6 +19,19 @@ public class Palindrome {
 
 	}
 
+	public static boolean isPalindrome(int number) {
+		// pretvorimo prvi broj u string
+		String str1 = "" + number;
+		// pretvorimo obrnut broj u string
+		String str2 = "" + reverse(number);
+		for (int i = 0; i < str1.length(); i++)
+			// ako broj i obrnut broj imaju razlicite brojeve na istim indexima
+			// vrati false
+			if (str1.charAt(i) != str2.charAt(i))
+				return false;
+		// ako su svi isti brojevi isti vrati true;
+		return true;
+	}
 	public static int reverse(int number) {
 		// uvodimo novu promjenljivu noviBroj
 		int noviBroj = 0;
@@ -39,19 +52,6 @@ public class Palindrome {
 		return noviBroj;
 	}
 
-	public static boolean isPalindrome(int number) {
-		// pretvorimo prvi broj u string
-		String str1 = "" + number;
-		// pretvorimo obrnut broj u string
-		String str2 = "" + reverse(number);
-		for (int i = 0; i < str1.length(); i++)
-			// ako broj i obrnut broj imaju razlicite brojeve na istim indexima
-			// vrati false
-			if (str1.charAt(i) != str2.charAt(i))
-				return false;
-		// ako su svi isti brojevi isti vrati true;
-		return true;
-	}
 
 	public static int checkInput() {
 

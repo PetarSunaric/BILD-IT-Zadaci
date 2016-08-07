@@ -22,7 +22,7 @@ public class VrijednostInvesticije {
 				(investicija * Math.pow(1 + mjesecnaInteresnaStopa, brojGodina * 12)));
 
 	}
-
+	//provjerava input za int vrijednosti
 	public static int checkInput() {
 
 		int num = 0;
@@ -33,6 +33,7 @@ public class VrijednostInvesticije {
 				num = input.nextInt();
 				if (num < 0)
 					throw new InputMismatchException("Negativan broj");
+				//if input is correct stop loop
 				error = false;
 			} catch (InputMismatchException e) {
 				System.out.print("Pogresan unos, unsite ponovo:  ");
@@ -42,7 +43,7 @@ public class VrijednostInvesticije {
 
 		return num;
 	}
-
+	//provjerava input za double vrijednosti
 	public static double checkInputD() {
 
 		double num = 0;
@@ -53,6 +54,7 @@ public class VrijednostInvesticije {
 				num = input.nextDouble();
 				if (num < 0)
 					throw new InputMismatchException("Negativan broj");
+				//if input is correct stop loop
 				error = false;
 			} catch (InputMismatchException e) {
 				System.out.print("Pogresan unos, unsite ponovo:  ");
