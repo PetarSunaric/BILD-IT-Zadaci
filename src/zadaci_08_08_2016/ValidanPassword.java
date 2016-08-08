@@ -34,21 +34,26 @@ public class ValidanPassword {
 			// true
 			if (!Character.isLetter(str.charAt(i)) && !Character.isDigit(str.charAt(i)))
 				return false;
+
 		}
 		return true;
 	}
 
 	public static boolean dvaBroja(String str) {
-		int count = 0;
+		int countBrojeva = 0, countSlova = 0;
+		;
 		for (int i = 0; i < str.length(); i++) {
 			// ako je karakter broj povecava broj brojeva
 			if (Character.isDigit(str.charAt(i)))
-				count++;
+				countBrojeva++;
+			if (Character.isLetter(str.charAt(i)))
+				countSlova++;
 		}
-		// ako je broj brojeva bar 2 vraca true;
-		if (count > 1) {
-			return true;
+		// ako je broj brojeva manji od 2 ili count slova manji od 1 vraca
+		// false;
+		if (countBrojeva < 2 || countSlova < 1) {
+			return false;
 		}
-		return false;
+		return true;
 	}
 }
