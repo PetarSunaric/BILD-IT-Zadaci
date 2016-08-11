@@ -13,28 +13,30 @@ public class BrojDanaUGodini {
 		int pocetnaGodina = checkInput();
 		System.out.print("Unesite krajnju godinu: ");
 		int krajnjaGodina = checkInput();
-		//unesene godine su raspon petlje
+		// unesene godine su raspon petlje
 		for (int i = pocetnaGodina; i <= krajnjaGodina; i++) {
 			System.out.println("Godina " + i + " ima: " + numberOfDayinAYear(i) + " dana");
 		}
 	}
-//vraca broj dana
+
+	// vraca broj dana
 	public static int numberOfDayinAYear(int year) {
-		//ako je godina prestupna vraca 366 dana
+		// ako je godina prestupna vraca 366 dana
 		if (isLeapYear(year)) {
 			return 366;
 		}
-		//ako godina nije prestupna vraca 365 dana
+		// ako godina nije prestupna vraca 365 dana
 		return 365;
 	}
-	//provjerava da li je godina prestupna
-	public static boolean isLeapYear(int i){
+
+	// provjerava da li je godina prestupna
+	public static boolean isLeapYear(int i) {
 		if ((i % 4 == 0 && i % 100 != 0) || (i % 400 == 0))
 			return true;
 		return false;
 	}
 
-	//provjerava unos
+	// provjerava unos
 	public static int checkInput() {
 
 		int num = 0;
