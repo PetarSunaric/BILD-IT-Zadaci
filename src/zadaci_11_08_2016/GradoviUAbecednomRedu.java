@@ -7,7 +7,7 @@ public class GradoviUAbecednomRedu {
 	public static void main(String[] args) {
 
 		Scanner input = new Scanner(System.in);
-		// unosimo gradove
+		// unosimo gradove.
 		System.out.print("Unesite prvi grad: ");
 		String grad1 = input.nextLine();
 		System.out.print("Unesite drugi grad: ");
