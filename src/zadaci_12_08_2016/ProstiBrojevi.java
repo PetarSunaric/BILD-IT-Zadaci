@@ -5,7 +5,7 @@ public class ProstiBrojevi {
 	public static void main(String[] args) {
 
 		for (int i = 0; i < 100000; i++) {
-			// ako je trenutni broj prost ispisi ga.
+			// ako je trenutni broj prost ispisi ga
 			if (isPrime(i) != 0)
 				System.out.println(i);
 		}
