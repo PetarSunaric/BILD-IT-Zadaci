@@ -1,6 +1,5 @@
 package zadaci_09_08_2016;
 
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
