@@ -13,6 +13,9 @@ public class ProstiBrojevi {
 
 	// provjerava da li je broj prost ako jeste vraca broj ako nije vraca 0
 	public static int isPrime(int n) {
+		// 1 nije prost broj
+		if (n == 1)
+			return 0;
 		for (int i = 2; i < n; i++) {
 			// ako ima brojeva djeljivih sa trenutnim postavi broj na 0
 			if (n % i == 0) {
