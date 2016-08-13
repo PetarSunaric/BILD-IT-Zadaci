@@ -43,12 +43,9 @@ public class PalindromePrimeBrojevi {
 	public static int reverse(int number) {
 		// uvodimo novu promjenljivu noviBroj
 		int noviBroj = 0;
-		int sledecaCifra;
 		while (number / 10 != 0) {
-			// sledecu cifru od broja dobijamo ko ostatak djeljenja sa 10
-			sledecaCifra = number % 10;
-			// novi broj postaje
-			noviBroj = noviBroj * 10 + sledecaCifra;
+			// number%10 je sledeca cifra
+			noviBroj = noviBroj * 10 + number % 10;
 			// broj postaje broj bez zadnje cifre
 			number /= 10;
 			// ako je broj manji od 10 novi broj postaje
