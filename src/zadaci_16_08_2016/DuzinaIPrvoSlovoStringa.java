@@ -9,7 +9,7 @@ public class DuzinaIPrvoSlovoStringa {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Unesite string: ");
 		String str = input.nextLine();
-		// duzinu stringa odredjujemo ovako
+		// duzinu stringa odredjujemo ovako.
 		System.out.print("Duzina stringa je " + str.length());
 		for (int i = 0; i < str.length(); i++) {
 			// ispisi prvo slovo na koje naidje i prekini petlju

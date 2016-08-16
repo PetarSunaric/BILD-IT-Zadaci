@@ -21,7 +21,7 @@ public class Piramida {
 			for (int j = i; j > 0; j--) {
 				System.out.print(j + 1);
 			}
-			// treca ugnjezdena petlja koja ispisuje desnu stranu piramide
+			// treca ugnjezdena petlja koja ispisuje desnu stranu piramide.
 			for (int j = 0; j < i + 1; j++) {
 				System.out.print(j + 1);
 			}

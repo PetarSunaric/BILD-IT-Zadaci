@@ -12,7 +12,7 @@ public class Palindrom {
 		// unosimo broj
 		System.out.println("Unesite trocifren broj: ");
 		int broj = checkInput();
-		// ako su prva i poslednja cifra jednake broj je palindrom
+		// ako su prva i poslednja cifra jednake broj je palindrom.
 		if (broj / 100 == broj % 10)
 			System.out.println("Broj je palindrom!");
 		else
