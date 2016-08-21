@@ -1,4 +1,4 @@
-package zadaci_21_08_2016;
+package zadaci_20_08_2016;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
