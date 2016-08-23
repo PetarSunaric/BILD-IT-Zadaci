@@ -35,8 +35,8 @@ public class Craps {
 
 	public static int rollDices() {
 		// random 2 numbers
-		int num1 = (int) (1 + Math.random() * 7);
-		int num2 = (int) (1 + Math.random() * 7);
+		int num1 = (int) (1 + Math.random() * 6);
+		int num2 = (int) (1 + Math.random() * 6);
 		System.out.println("You rolled " + num1 + "+" + num2 + "=" + (num1 + num2));
 		// and return sum of them
 		return (num1 + num2);

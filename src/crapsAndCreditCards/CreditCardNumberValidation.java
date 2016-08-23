@@ -26,7 +26,10 @@ public class CreditCardNumberValidation {
 		// if size is between 12 and 17
 		if (getSize(number) > 12 && getSize(number) < 17) {
 			// if step 2 + step 3 divisible by 10 return true;
+			System.out.println(sumOfDoubleEvenPlace(number));
+			System.out.println(sumOfOddPlace(number));
 			if ((sumOfDoubleEvenPlace(number) + sumOfOddPlace(number)) % 10 == 0) {
+				System.out.println(getSize(number));
 				return true;
 			}
 		}
@@ -62,7 +65,7 @@ public class CreditCardNumberValidation {
 	public static int sumOfOddPlace(long number) {
 		int sum = (int) (number % 10);
 		number /= 10;
-		while (number / 100 != 0) {
+		while (number % 100 != 0) {
 			// get first digit of last two
 			int num = (int) (number % 100 / 10);
 			number /= 100;
