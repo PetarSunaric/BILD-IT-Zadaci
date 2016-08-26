@@ -49,11 +49,11 @@ class MyPoint {
 
 	// returns distance between current dots and dots stored in object
 	public double distance(MyPoint object) {
-		return Math.sqrt((Math.pow(object.getX() - this.x, 2))) + (Math.pow(object.getY() - this.y, 2));
+		return Math.sqrt((Math.pow(object.getX() - this.x, 2)) + (Math.pow(object.getY() - this.y, 2)));
 	}
 
 	// returns distance between current dots and new dots
 	public double distance(double x, double y) {
-		return Math.sqrt((Math.pow(x - this.x, 2))) + (Math.pow(y - this.y, 2));
+		return Math.sqrt((Math.pow(x - this.x, 2)) + (Math.pow(y - this.y, 2)));
 	}
 }
