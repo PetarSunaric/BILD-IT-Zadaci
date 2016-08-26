@@ -128,6 +128,6 @@ class LinearEquation {
 
 	// returns value of y
 	public double getY() {
-		return (a * d - e * c) / (a * d - b * c);
+		return (a * f - e * c) / (a * d - b * c);
 	}
 }
