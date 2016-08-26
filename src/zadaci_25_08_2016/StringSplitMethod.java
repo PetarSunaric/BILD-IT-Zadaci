@@ -25,33 +25,28 @@ public class StringSplitMethod {
 		String str = "";
 
 		int count = 0;
-		// nested loop goes compares each character of the string with each
-		// character of "regex" expresion
+		// loop that goes through string
 		for (int i = 0; i < s.length(); i++) {
 			count = 0;
 			for (int j = 0; j < regex.length(); j++) {
-				// if loop find match between char from string and char from
-				// regex it adds temp string to array list and resets the string
-				// else it increments the counter
+				// if char in string is same as char in regex
 				if (s.charAt(i) == regex.charAt(j)) {
-					list.add(str);
-					str = "";
+					list.add(str); // adds string to list
+					str = ""; // string becomes empty string
 					break;
 				} else {
-					count++;
+					count++; // increase count if chars ont match
 				}
-				// if looped passed through regex and didn't find match it adds
-				// character to temp strings
+				// if regex loop end with no match add character to string
 				if (count == regex.length()) {
 					str += s.charAt(i);
 				}
 			}
 		}
-		// adding last part of the string
+		// add last part of string after last regex character
 		list.add(str);
-		list.add(str);
-		String[] fin = new String[list.size()];
-		for (int i = 0; i < list.size(); i++) {
+		String[] fin = new String[list.size()]; // making array of strings from
+		for (int i = 0; i < list.size(); i++) { // list
 			fin[i] = list.get(i);
 		}
 		return fin;
