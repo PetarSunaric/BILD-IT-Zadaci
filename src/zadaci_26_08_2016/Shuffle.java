@@ -1,6 +1,7 @@
 package zadaci_26_08_2016;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Shuffle {
 
@@ -12,17 +13,17 @@ public class Shuffle {
 			list.add(i);
 		}
 		shuffle(list);
+		// print list
+		System.out.println("Numbers in increasing order: ");
+		for (int e : list) {
+			System.out.print(e + " ");
+		}
 	}
 
+	// shuffles array list
 	public static void shuffle(ArrayList<Integer> list) {
 
-		while (list.size() != 0) { // while list isn't empty
+		Collections.shuffle(list);
 
-			// get random number
-			int j = (int) (Math.random() * (list.size()));
-			// and print it
-			System.out.print(list.get(j) + " ");
-			list.remove(j); // after printing remove it
-		}
 	}
 }
