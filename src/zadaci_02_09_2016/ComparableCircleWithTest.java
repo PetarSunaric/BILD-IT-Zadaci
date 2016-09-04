@@ -13,9 +13,9 @@ public class ComparableCircleWithTest {
 		// result
 		System.out.print("Larger of two circles is: ");
 		if (com1.compareTo(com2) == 1) {
-			System.out.print("Circle 2");
+			System.out.print("Circle 1");
 		} else if (com1.compareTo(com2) == -1) {
-			System.out.println("Circle 1");
+			System.out.println("Circle 2");
 		} else if (com1.compareTo(com2) == 0)
 			System.out.println("They are equal!");
 
